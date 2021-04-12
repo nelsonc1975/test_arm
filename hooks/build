@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo Start build ...
-docker build $DOCKERFILE_PATH -t $IMAGE_NAME .
+docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME .
