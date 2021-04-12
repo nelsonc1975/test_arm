@@ -1,4 +1,4 @@
-FROM --platform=linux/arm/v7 alpine AS build
+FROM alpine AS build
 RUN apk add --no-cache alpine-sdk
 WORKDIR /app
 COPY app/* .
