@@ -1,4 +1,10 @@
 #!/bin/bash
 
-echo Start build ...
-docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+echo Start build $DOCKER_TAG ...
+
+if [ _$DOCKER_TAG = _armv7 ]; then
+	echo Set platform linux/arm/v7
+	docker build --platform linux/arm/v7 -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+else
+	docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+fi
